@@ -152,28 +152,31 @@ struct Test: View {
                 .background(Color(red: 10/255, green: 10/255, blue: 10/255))
             }
             .disabled(timesPressed >= limit)
-            .navigationBarBackButtonHidden(true);
+            .navigationBarBackButtonHidden(true)
+            .zIndex(1.0);
         } else {
-            VStack {
-                Text("Congratulations! You got \(score) out of \(limit) correct")
-                    .multilineTextAlignment(.center)
-                    .padding(.all, 50.0)
-                    .font(.title)
-                    .fontWeight(.light);
-                Text("Current Record: \(UserDefaults.standard.integer(forKey: "personalBest"))")
-                    .multilineTextAlignment(.center)
-                    .padding(.all, 20.0)
-                    .font(.title3)
-                    .fontWeight(.light);
-                Button(action: {
-                    reset();
-                }) {
-                    Text("Play Again");
-                }.padding(.all)
-                NavigationLink(destination: Home()) {
-                    Text("Main Menu")
-                }.padding(.all)
-            }.navigationBarBackButtonHidden(true);
+            ZStack {
+                VStack {
+                    Text("Congratulations! You got \(score) out of \(limit) correct")
+                        .multilineTextAlignment(.center)
+                        .padding(.all, 50.0)
+                        .font(.title)
+                        .fontWeight(.light);
+                    Text("Current Record: \(UserDefaults.standard.integer(forKey: "personalBest"))")
+                        .multilineTextAlignment(.center)
+                        .padding(.all, 20.0)
+                        .font(.title3)
+                        .fontWeight(.light);
+                    Button(action: {
+                        reset();
+                    }) {
+                        Text("Play Again");
+                    }.padding(.all)
+                    NavigationLink(destination: Home()) {
+                        Text("Main Menu")
+                    }.padding(.all)
+                }.navigationBarBackButtonHidden(true)
+            }.zIndex(5.0);
         }
     }
 }
