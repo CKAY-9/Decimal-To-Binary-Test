@@ -2,7 +2,6 @@
 //  ContentView.swift
 //  DecimalToBinaryTest
 //
-//  Created by Cameron Armstrong on 2023-02-13.
 //
 
 import SwiftUI
