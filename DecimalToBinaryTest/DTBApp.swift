@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  DTBApp.swift
 //  DecimalToBinaryTest
 //
 //
